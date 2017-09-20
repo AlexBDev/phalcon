@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        <title>Todo</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-6">
+                        <h1 class="text-center">Todo</h1>
+
+                        <?php echo $this->tag->form("index/create"); ?>
+
+                        <?php
+
+                        echo '<ul>';
+                        foreach ($todos as $todo) {
+                            if ($todo->is_done) {
+                                echo '<li>'.$todo->content.'<a href="'.$this->url->get('index/delete',  ['id' => $todo->id]).'"><i class="fa fa-times"></i></a></li>';
+                            } else {
+                                echo '<li>'.$todo->content.'<a href="'.$this->url->get('index/done',  ['id' => $todo->id]).'"><i class="fa fa-check"></i></a></li>';
+                            }
+                        }
+                        echo '</ul>';
+
+                        ?>
+
+                        <p>
+                            <label for="name">Name</label>
+                            <?php echo $this->tag->textField("content"); ?>
+                        </p>
+
+                        <p>
+                            <?php echo $this->tag->submitButton("Valider"); ?>
+                        </p>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script type="application/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    </body>
+</html>

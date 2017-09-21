@@ -1,0 +1,35 @@
+h1 {
+   margin-top: 25px;
+}
+
+hr, ul {
+    margin-bottom: 30px;
+}
+
+#todo-list li {
+    font-size: 1.3em;
+    padding: 10px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+#todo-list li:hover {
+    cursor: pointer;
+    background: #f0f0f0;
+}
+
+
+#todo-list .todo-delete {
+    text-decoration: line-through;
+}
+
+#todo-list li i {
+    float: right;
+}
+
+#todo-list .todo-delete i {
+    color: red;
+}
+
+#todo-list .todo-done i {
+    color: green;
+}
